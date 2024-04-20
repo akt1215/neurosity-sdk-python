@@ -21,6 +21,6 @@ def callback(data):
     print(data)
 
 unsubscribe = neurosity.brainwaves_raw(callback)
-time.sleep(5)
+time.sleep(10)
 unsubscribe()
 print("Done with example.py")
