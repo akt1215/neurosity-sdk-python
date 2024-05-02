@@ -29,12 +29,12 @@ def callback(data):
     #         data_writer.writerow(data["data"][i])
 
     for i in range(len(data["psd"])):
-        with open('psd.csv', mode='a') as data_file:
+        with open('psd_grab.csv', mode='a') as data_file:
             data_writer = csv.writer(data_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
             data_writer.writerow(data["psd"][i])
 
 
 # unsubscribe = neurosity.brainwaves_raw(callback)
 unsubscribe = neurosity.brainwaves_psd(callback)
-time.sleep(10)
+time.sleep(120)
 unsubscribe()
