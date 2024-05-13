@@ -32,6 +32,7 @@ def callback(data):
 
     # print(".")
     # print(round((time.time() - timeStart) % split))
+    # if round((time.time() - timeStart) % split) == 0:
     if (math.ceil(time.time() - timeStart) % split) == 0:
         # play sound B4.mp3
         sound_file_path = "/workspaces/neurosity-sdk-python/Code/Neural Network/Data Collecting/B4.mp3"
