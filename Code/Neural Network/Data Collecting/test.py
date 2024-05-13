@@ -1,4 +1,4 @@
-import time
+"""import time
 import csv
 import random 
 
@@ -26,4 +26,12 @@ for _ in range(40):
         with open('demo2.csv', mode='a') as data_file:
             data_writer = csv.writer(data_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
             data_writer.writerow(data)
-    time.sleep(0.5)
+    time.sleep(0.5)"""
+
+from playsound import playsound
+
+# Replace 'sound_file_path' with the path to your sound file
+sound_file_path = "/workspaces/neurosity-sdk-python/Code/Neural Network/Data Collecting/B4.mp3"
+
+# Play the sound
+playsound(sound_file_path)
