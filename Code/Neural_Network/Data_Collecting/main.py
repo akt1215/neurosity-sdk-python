@@ -34,10 +34,6 @@ def callback(data):
     # print(round((time.time() - timeStart) % split))
     # if round((time.time() - timeStart) % split) == 0:
     if (math.ceil(time.time() - timeStart) % split) == 0:
-        # play sound B4.mp3
-        sound_file_path = "/workspaces/neurosity-sdk-python/Code/Neural Network/Data Collecting/B4.mp3"
-        playsound(sound_file_path)
-
         marker = 1 - marker
         if marker == 0:
             print("CLOSE")
@@ -54,14 +50,13 @@ def callback(data):
     #         data_writer = csv.writer(data_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     #         data_writer.writerow(data["psd"][i])
 
-    for i in range(len(data["data"])):
-        data["data"][i].append(marker)
+    for i in range(len(data["psd"])):
+        data["psd"][i].append(marker)
         with open('demo3.csv', mode='a') as data_file:
             data_writer = csv.writer(data_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-            data_writer.writerow(data["data"][i])
+            data_writer.writerow(data["psd"][i])
 
 # unsubscribe = neurosity.brainwaves_raw(callback)
-# unsubscribe = neurosity.brainwaves_psd(callback)
-unsubscribe = neurosity.brainwaves_raw(callback)
-time.sleep(30)
+unsubscribe = neurosity.brainwaves_psd(callback)
+time.sleep(15)
 unsubscribe()
