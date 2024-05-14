@@ -28,10 +28,12 @@ for _ in range(40):
             data_writer.writerow(data)
     time.sleep(0.5)"""
 
-from playsound import playsound
+from pydub import AudioSegment
+from pydub.playback import play
 
-# Replace 'sound_file_path' with the path to your sound file
-sound_file_path = "/workspaces/neurosity-sdk-python/Code/Neural Network/Data Collecting/B4.mp3"
+def play_audio(file):
+    sound = AudioSegment.from_mp3(file)
+    play(sound)
 
-# Play the sound
-playsound(sound_file_path)
+# Replace 'your_music.mp3' with the path to your MP3 file
+play_audio('/workspaces/neurosity-sdk-python/Code/Neural_Network/Data_Collecting/B4.mp3')
